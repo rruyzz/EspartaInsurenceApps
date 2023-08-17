@@ -9,8 +9,10 @@ struct ContentView: View {
 	}
 }
 
-struct ContentView_Previews: PreviewProvider {
-	static var previews: some View {
-		ContentView()
-	}
+struct ContentViewOther: View {
+    let greet = Greeting().greet()
+
+    var body: some View {
+        Text("dsklfjkldsj")
+    }
 }
