@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.esparta.espartainsurence.android.document.DocumentView
 
 @Composable
 fun MainRoot() {
@@ -18,9 +19,9 @@ fun MainRoot() {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
-            NavHost(navController = navController, startDestination = "main") {
-                composable("main") { GreetingView("First", navController) }
-                composable("list") { GreetingOutroView("Second", navController) }
+            NavHost(navController = navController, startDestination = "document") {
+                composable("document") { DocumentView("Qual seu CPF?", "CPF", navController) }
+                composable("nome") { DocumentView("Qual seu nome?", "name", navController) }
             }
         }
     }
