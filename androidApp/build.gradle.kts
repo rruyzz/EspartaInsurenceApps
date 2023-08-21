@@ -46,9 +46,15 @@ dependencies {
     implementation("androidx.compose.foundation:foundation:1.5.0")
     implementation("androidx.activity:activity-compose:1.7.2")
 
+
     val navVersion = "2.7.0"
     implementation("androidx.navigation:navigation-compose:$navVersion")
 
     implementation("androidx.compose.material3:material3:1.1.1")
     implementation("androidx.compose.material3:material3-window-size-class:1.1.1")
+
+    val koinVersion = "3.3.2"
+    implementation ("io.insert-koin:koin-core:$koinVersion")
+    implementation ("io.insert-koin:koin-android:$koinVersion")
+    implementation ("io.insert-koin:koin-androidx-compose:3.4.1")
 }

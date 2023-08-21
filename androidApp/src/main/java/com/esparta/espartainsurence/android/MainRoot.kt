@@ -17,11 +17,11 @@ fun MainRoot() {
     MyApplicationTheme {
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colorScheme.background
+//            color = MaterialTheme.colorScheme.background
         ) {
             NavHost(navController = navController, startDestination = "document") {
                 composable("document") { DocumentView("Qual seu CPF?", "CPF", navController) }
-                composable("nome") { DocumentView("Qual seu nome?", "name", navController) }
+                composable("name") { DocumentView("Qual seu nome?", "name", navController) }
             }
         }
     }
