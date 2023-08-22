@@ -9,13 +9,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun ButtonEsparta(onClick: () -> Unit) {
+fun ButtonEsparta(isEnable: Boolean = false, onClick: () -> Unit) {
     Button(
-        modifier = Modifier
-            .fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth(),
         onClick = {
             onClick.invoke()
         },
+        enabled = isEnable,
         colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)
     ) {
         Text("Próximo")

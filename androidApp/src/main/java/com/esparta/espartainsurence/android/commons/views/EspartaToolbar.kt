@@ -29,40 +29,37 @@ fun EspartaToolbar(
             Text(
                 text = text,
                 textAlign = TextAlign.Center,
-//                color = Black,
                 modifier = Modifier.fillMaxWidth()
             )
         },
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-//            containerColor = MaterialTheme.colorScheme.primary
+            containerColor = MaterialTheme.colorScheme.surfaceVariant
         ),
         navigationIcon = {
             IconButton(onClick = { pressOnBack() }) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
                     contentDescription = "Localized description",
-//                    tint = Black,
                     modifier = Modifier
                         .padding(8.dp)
                 )
             }
         },
-        actions = {
-            IconButton(onClick = { /* doSomething() */ }) {
-                Icon(
-                    imageVector = Icons.Filled.AccountBox,
-                    contentDescription = "Localized description",
-//                    tint = Black,
-                    )
-            }
-            IconButton(onClick = { /* doSomething() */ }) {
-                Icon(
-                    imageVector = Icons.Filled.Add,
-                    contentDescription = "Localized description",
-//                    tint = Black,
-                    )
-            }
-        }
+//        actions = {
+//            IconButton(onClick = { /* doSomething() */ }) {
+//                Icon(
+//                    imageVector = Icons.Filled.AccountBox,
+//                    contentDescription = "Localized description",
+//                    )
+//            }
+//            IconButton(onClick = { /* doSomething() */ }) {
+//                Icon(
+//                    imageVector = Icons.Filled.Add,
+//                    contentDescription = "Localized description",
+////                    tint = Black,
+//                    )
+//            }
+//        }
     )
 }
 
