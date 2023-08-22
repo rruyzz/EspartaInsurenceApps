@@ -32,9 +32,6 @@ fun EspartaToolbar(
                 modifier = Modifier.fillMaxWidth()
             )
         },
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant
-        ),
         navigationIcon = {
             IconButton(onClick = { pressOnBack() }) {
                 Icon(

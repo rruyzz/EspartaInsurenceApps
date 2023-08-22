@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.esparta.espartainsurence.android.commons.views.SetStatusBarColor
 import com.esparta.espartainsurence.android.document.DocumentView
 
 @Composable
@@ -15,13 +16,13 @@ fun MainRoot() {
     val navController = rememberNavController()
 
     MyApplicationTheme {
+        SetStatusBarColor(color = MaterialTheme.colorScheme.surface)
         Surface(
             modifier = Modifier.fillMaxSize(),
-//            color = MaterialTheme.colorScheme.background
         ) {
             NavHost(navController = navController, startDestination = "document") {
-                composable("document") { DocumentView("Qual seu CPF?", "CPF", navController) }
-                composable("name") { DocumentView("Qual seu nome?", "name", navController) }
+                composable("document") { DocumentView("Qual seu CPF?", "Documento", navController) }
+                composable("name") { DocumentView("Qual seu nome?", "Nome", navController) }
             }
         }
     }

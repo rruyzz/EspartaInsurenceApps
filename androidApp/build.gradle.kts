@@ -57,4 +57,7 @@ dependencies {
     implementation ("io.insert-koin:koin-core:$koinVersion")
     implementation ("io.insert-koin:koin-android:$koinVersion")
     implementation ("io.insert-koin:koin-androidx-compose:3.4.1")
+
+    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.30.1")
+
 }

@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 fun DefaultSpacer() = Spacer(
     modifier = Modifier
         .fillMaxWidth()
-        .height(4.dp)
+        .height(16.dp)
 )
 
 @Composable
