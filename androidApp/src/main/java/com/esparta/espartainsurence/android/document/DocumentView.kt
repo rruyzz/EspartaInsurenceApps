@@ -41,6 +41,7 @@ fun DocumentView(
                 }
             )
             DefaultSpacer()
+            DefaultSpacer()
             ButtonEsparta(
                 isEnable = screenState.value
             ) {
