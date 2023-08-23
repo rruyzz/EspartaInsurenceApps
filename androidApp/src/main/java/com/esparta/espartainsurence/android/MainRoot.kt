@@ -16,7 +16,7 @@ fun MainRoot() {
     val navController = rememberNavController()
 
     MyApplicationTheme {
-        SetStatusBarColor(color = MaterialTheme.colorScheme.surface)
+//        SetStatusBarColor(color = MaterialTheme.colorScheme.surface)
         Surface(
             modifier = Modifier.fillMaxSize(),
         ) {

@@ -8,6 +8,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -19,12 +20,10 @@ import com.esparta.espartainsurence.android.MyApplicationTheme
 @Composable
 fun EspartaToolbar(
     text: String,
-    pressOnBack: () -> Unit
+    pressOnBack: () -> Unit,
+    scrollBehavior: TopAppBarScrollBehavior
 ) {
     CenterAlignedTopAppBar(
-        modifier = Modifier
-            .fillMaxWidth()
-        ,
         title = {
             Text(
                 text = text,
@@ -42,28 +41,14 @@ fun EspartaToolbar(
                 )
             }
         },
-//        actions = {
-//            IconButton(onClick = { /* doSomething() */ }) {
-//                Icon(
-//                    imageVector = Icons.Filled.AccountBox,
-//                    contentDescription = "Localized description",
-//                    )
-//            }
-//            IconButton(onClick = { /* doSomething() */ }) {
-//                Icon(
-//                    imageVector = Icons.Filled.Add,
-//                    contentDescription = "Localized description",
-////                    tint = Black,
-//                    )
-//            }
-//        }
+        scrollBehavior = scrollBehavior,
     )
 }
 
-@Preview
-@Composable
-fun EspartaToolbarPreview() {
-    MyApplicationTheme {
-        EspartaToolbar("text", pressOnBack = {})
-    }
-}
+//@Preview
+//@Composable
+//fun EspartaToolbarPreview() {
+//    MyApplicationTheme {
+//        EspartaToolbar("text", pressOnBack = {})
+//    }
+//}
