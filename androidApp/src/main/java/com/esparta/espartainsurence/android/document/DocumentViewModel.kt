@@ -20,7 +20,7 @@ class DocumentViewModel(): ViewModel() {
     fun setButtonEnable(text: String) = viewModelScope.launch {
 //        _isButtonEnable.emit(text.length > 4)
 //        issButtonEnable = text.length > 4
-        _sharedFlow.emit(text.length > 4)
+        _sharedFlow.emit(text.length == 11)
     }
 
 }
