@@ -1,26 +1,28 @@
 package com.esparta.espartainsurence.android.document
 
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asSharedFlow
-import kotlinx.coroutines.flow.asStateFlow
+import com.esparta.espartainsurence.domain.usecase.CepUseCase
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
-class DocumentViewModel(): ViewModel() {
+class DocumentViewModel(
+    private val getAddress: CepUseCase
+) : ViewModel() {
 
-//    private val _isButtonEnable = MutableStateFlow(false)
-//    val isButtonEnable = _isButtonEnable.asStateFlow()
-//    val issButtonEnable = false.stateIn()
-    private val _sharedFlow = MutableSharedFlow<Boolean>()
-    val sharedFlow = _sharedFlow.asSharedFlow()
+    private val _uiState = MutableStateFlow(DocumentViewState())
+    val uiState = _uiState.asStateFlow()
+
+    fun getAddress() = viewModelScope.launch {
+        _uiState.emit(uiState.value.copy(isLoading = true))
+        getAddress.invoke("cep")
+            .onStart { _uiState.emit(uiState.value.copy(isLoading = true)) }
+            .onCompletion { _uiState.emit(uiState.value.copy(isLoading = false)) }
+            .collect { _uiState.emit(uiState.value.copy(address = it)) }
+    }
 
     fun setButtonEnable(text: String) = viewModelScope.launch {
-//        _isButtonEnable.emit(text.length > 4)
-//        issButtonEnable = text.length > 4
-        _sharedFlow.emit(text.length == 11)
+        _uiState.emit(uiState.value.copy(isButtonEnable = text.length == 8))
     }
 
 }

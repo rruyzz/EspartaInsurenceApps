@@ -24,7 +24,7 @@ fun TextInputEsparta(
         value = text.value,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
         onValueChange = {
-            if (it.length <= 11) {
+            if (it.length <= 8) {
                 text.value = it
                 textInput(text.value)
             }
@@ -37,7 +37,8 @@ fun TextInputEsparta(
 
 object DateDefaults {
 
-    const val DATE_MASK = "###.###.###-##"
+//    const val DATE_MASK = "###.###.###-##"
+    const val DATE_MASK = "#####-###"
 }
 
 class MaskVisualTransformation(private val mask: String) : VisualTransformation {

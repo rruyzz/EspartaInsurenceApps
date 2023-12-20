@@ -2,6 +2,9 @@ package com.esparta.espartainsurence.android
 
 import android.app.Application
 import com.esparta.espartainsurence.android.document.DocumentViewModel
+import com.esparta.espartainsurence.data.api.CepDataSource
+import com.esparta.espartainsurence.domain.repository.CepRepositoryImpl
+import com.esparta.espartainsurence.domain.usecase.CepUseCase
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -23,6 +26,14 @@ class MainApplication : Application() {
     }
 
     private val viewModelsModule = module {
-        viewModel { DocumentViewModel() }
+        viewModel {
+            DocumentViewModel(
+                getAddress = CepUseCase(
+                    repository = CepRepositoryImpl(
+                        dataSource = CepDataSource()
+                    )
+                )
+            )
+        }
     }
 }
